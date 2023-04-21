@@ -9,12 +9,15 @@ def main():
             'PEPPER',
             'CHICKEN'
         ],
+
         'movies': [
             {'title': 'the obsession', 'genre': 'horror'},
             {'title': 'the adam project', 'genre': 'fiction'}
         ]
     }
+
     # TODO: Step 3 - Add another movie to the data structure
+
     n_movie = {'title': 'catching killers', 'genre': 'crime'}
     about_me['movies'].append(n_movie)
     add_pizza_toppings(about_me, ('chicken', 'habanero'))
@@ -26,6 +29,7 @@ def main():
     return
 
 # TODO: Step 4 - Function that prints student name and ID 
+
 def print_student_name_and_id(about_me):
     ful_nam=about_me['full_name']
     fst_nam = ful_nam.split()[0]
@@ -35,6 +39,7 @@ def print_student_name_and_id(about_me):
     return
     
 # TODO: Step 5 - Function that adds pizza toppings to data structure
+
 def add_pizza_toppings(about_me, toppings):
     about_me["pizza_toppings"].extend(toppings)
     about_me["pizza_toppings"].sort()
@@ -42,12 +47,14 @@ def add_pizza_toppings(about_me, toppings):
     return
 
 # TODO: Step 6 - Function that prints bullet list of pizza toppings
+
 def print_pizza_toppings(about_me):
     
     toppings = about_me["pizza_toppings"]
     print(f"\my favorite pizza toppings are:")
     for x in range(len(toppings)-2):
         print("-", toppings[x].upper())
+
 
     formatted_toppings = [topping.title() for topping in toppings]
     print(f"\my favorite pizza toppings are:")
@@ -58,6 +65,7 @@ def print_pizza_toppings(about_me):
     return
 
 # TODO: Step 7 - Function that prints comma-separated list of movie genres
+
 def print_movie_genres(about_me):
     genres = [movie["genre"] for movie in about_me["movies"]]
     if len(genres) > 1:
@@ -66,6 +74,7 @@ def print_movie_genres(about_me):
     return 
 
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
+
 def print_movie_titles(movie_list):
     movy_titles = [movie["title"] for movie in movie_list]
     formatted_titles = [title.title() for title in movy_titles]
@@ -73,6 +82,7 @@ def print_movie_titles(movie_list):
         formatted_titles[-1] = "and " + formatted_titles[-1]
     print(f"\Some of my favourite movies are {', '.join(formatted_titles)}!")
     return
+
     
 if __name__ == '_main_':
     main()
